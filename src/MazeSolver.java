@@ -10,7 +10,12 @@ public class MazeSolver
 
     // default constructor
     public MazeSolver() {
-
+        maze = new int[0][0];
+        visited = new boolean[0][0];
+        startRow = 0;
+        startCol = 0;
+        endRow = 0;
+        endCol = 0;
     }
 
     // non default constructor
