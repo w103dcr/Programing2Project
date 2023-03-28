@@ -11,3 +11,5 @@ Rhett Godwin
 Dwayne is going to be creating the class Maze. Created a stub for the class and added constructors, getters, and setters.
 
 Rhett is going to be creating the class MazeSolver. Created a stub for the class and added constructors, getters, and setters.
+
+Riley is going to be creating the class MazeMain. Created a stub for the class and added a constructor and scanner.
