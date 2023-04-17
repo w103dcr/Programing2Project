@@ -1,7 +1,8 @@
-import java.util.ArrayList;
-
 // Class Maze, C211 Group Project Spring 2023
 // Author: Dwayne Roark
+
+// Importing Utilities
+import java.util.ArrayList;
 
 // Creating Class Maze
 public class Maze {
@@ -12,12 +13,13 @@ public class Maze {
     private Cell[][] cells; // 2d array of Object Cells
 
     // Constructor
-    public Maze(int x, int y) {
-        row = y;
-        column = x;
-        gridRow = y * 4 + 1;
-        gridColumn = x * 2 + 1;
+    public Maze(int c, int r) {
+        row = r;
+        column = c;
+        gridRow = r * 4 + 1;
+        gridColumn = c * 2 + 1;
         grid = new char[gridRow][gridColumn];
+        cellArray();
     }
 
     // Creating Class for a Cell
@@ -80,6 +82,17 @@ public class Maze {
                 return false;
             Cell otherCell = (Cell) other;
             return (this.x == otherCell.x && this.y == otherCell.y);
+        }
+    }
+    
+    // Method for Creating an Array Called Cells and Filling it With Cell Objects
+    private void cellArray() {
+        // Create Array
+        cells = new Cell[column][row];
+        for (int c = 0; c < column; c++) {
+            for (int r = 0; r < row; r++) {
+                cells[c][r] = new Cell(c, r, false);
+            }
         }
     }
 }
