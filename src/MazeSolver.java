@@ -1,5 +1,6 @@
 //Class MazeSolver, C211 Group Project Spring 2023
 //Author: Rhett Godwin
+*****PRE ALPHA CONCEPT STAGE BUILD*******
 public class MazeSolver
 {
     // Initialize instance variables
