@@ -1,105 +1,77 @@
 //Class MazeSolver, C211 Group Project Spring 2023
 //Author: Rhett Godwin
-*****PRE ALPHA CONCEPT STAGE BUILD*******
+//************ALPHA BUILD 0.3****************
+//*     NOT IN 100% WORKING STATE           *
+//*******************************************
+
+package projectmazetest;
+
+import java.util.Arrays;
+
 public class MazeSolver
 {
-    // Initialize instance variables
-    private int[][] maze;
-    private boolean[][] visited;
-    private int startRow, startCol;
-    private int endRow, endCol;
+    Maze maze = new Maze();
+    char[][] mazeTest = maze.returnArray();
 
-    // default constructor
-    public MazeSolver() {
-        maze = new int[0][0];
-        visited = new boolean[0][0];
-        startRow = 0;
-        startCol = 0;
-        endRow = 0;
-        endCol = 0;
-    }
-
-    // non default constructor
-    public MazeSolver(int[][] maze, boolean[][] visited, int startRow, int startCol, int endRow, int endCol) {
-        super();
-        this.maze = maze;
-        this.visited = visited;
-        this.startRow = startRow;
-        this.startCol = startCol;
-        this.endRow = endRow;
-        this.endCol = endCol;
-    }
-
-//getter for maze
-    public int[][] getMaze()
+    public void solveMaze(int x, int y)
     {
-        return maze;
+
+        // check to see if we reached the end of the maze
+        if (x == mazeTest.length - 1 && y == mazeTest[0].length - 1)
+        {
+
+            // marks the end of the maze with an E
+            mazeTest[x][y] = 'E';
+            return;
+        }
+
+        // check if the current cell is a wall or has been visited
+        if (mazeTest[x][y] == '1' || mazeTest[x][y] == '*')
+        {
+            return;
+        }
+
+//marks the current cell as visited
+
+        System.out.println(Arrays.deepToString(mazeTest));
+        if (x >= 0 && x < mazeTest.length && y >= 0 && y < mazeTest.length)
+        {
+            mazeTest[x][y] = '*';
+
+        }
+        // Use recursion to explore each cell
+
+        // left
+        if (x > 0)
+        {
+            solveMaze(x - 1, y);
+        }
+
+        // up
+        if (y > 0)
+        {
+            solveMaze(x, y - 1);
+        }
+
+        // right
+        if (x < mazeTest.length - 1)
+        {
+            solveMaze(x + 1, y);
+        }
+
+        // down
+        if (y < mazeTest.length - 1)
+        {
+            solveMaze(x, y + 1);
+        }
     }
 
-//setter for maze
-    public void setMaze(int[][] maze)
+    public char[][] returnArray()
     {
-        this.maze = maze;
-    }
-
-//getter for visited
-    public boolean[][] getVisited()
-    {
-        return visited;
-    }
-
-//setter for visited
-    public void setVisited(boolean[][] visited)
-    {
-        this.visited = visited;
-    }
-
-//getter for startrow
-    public int getStartRow()
-    {
-        return startRow;
-    }
-
-//setter for start row
-    public void setStartRow(int startRow)
-    {
-        this.startRow = startRow;
-    }
-
-//getter for startcol
-    public int getStartCol()
-    {
-        return startCol;
-    }
-
-//setter for startcol
-    public void setStartCol(int startCol)
-    {
-        this.startCol = startCol;
-    }
-
-//getter for endrow
-    public int getEndRow()
-    {
-        return endRow;
-    }
-
-//setter for endrow
-    public void setEndRow(int endRow)
-    {
-        this.endRow = endRow;
-    }
-
-//getter for endcol
-    public int getEndCol()
-    {
-        return endCol;
-    }
-
-//setter for endcol
-    public void setEndCol(int endCol)
-    {
-        this.endCol = endCol;
+        return mazeTest;
     }
 
 }
+
+
+
