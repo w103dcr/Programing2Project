@@ -1,7 +1,13 @@
 //Class MazeSolver, C211 Group Project Spring 2023
 //Author: Rhett Godwin
-//************ALPHA BUILD 0.3****************
+//************ALPHA BUILD 0.5****************
 //*     NOT IN 100% WORKING STATE           *
+//      TRANSVERSE METHOD WORKS BUT         *
+//      DOESNT DISPLAY RIGHT                *
+// CHANGELOG:                               *
+// REWORKED CODE TO ALLOW FOR METHODS TO    *
+// TO BE CALLED FROM MAIN WITHOUT PASSING   *
+// ARRAYS                                   *
 //*******************************************
 
 package projectmazetest;
@@ -10,68 +16,85 @@ import java.util.Arrays;
 
 public class MazeSolver
 {
-    Maze maze = new Maze();
-    char[][] mazeTest = maze.returnArray();
 
-    public void solveMaze(int x, int y)
+//check if a given cell in the maze is valid (within bounds and a '.' character)
+    public static boolean isValidSpot(char[][] maze, int row, int column)
     {
-
-        // check to see if we reached the end of the maze
-        if (x == mazeTest.length - 1 && y == mazeTest[0].length - 1)
+        if (row >= 0 && row < maze.length && column >= 0 && column < maze.length)
         {
-
-            // marks the end of the maze with an E
-            mazeTest[x][y] = 'E';
-            return;
-        }
-
-        // check if the current cell is a wall or has been visited
-        if (mazeTest[x][y] == '1' || mazeTest[x][y] == '*')
-        {
-            return;
-        }
-
-//marks the current cell as visited
-
-        System.out.println(Arrays.deepToString(mazeTest));
-        if (x >= 0 && x < mazeTest.length && y >= 0 && y < mazeTest.length)
-        {
-            mazeTest[x][y] = '*';
+            return maze[row][column] == '.';
 
         }
-        // Use recursion to explore each cell
-
-        // left
-        if (x > 0)
-        {
-            solveMaze(x - 1, y);
-        }
-
-        // up
-        if (y > 0)
-        {
-            solveMaze(x, y - 1);
-        }
-
-        // right
-        if (x < mazeTest.length - 1)
-        {
-            solveMaze(x + 1, y);
-        }
-
-        // down
-        if (y < mazeTest.length - 1)
-        {
-            solveMaze(x, y + 1);
-        }
+        return false;
     }
 
-    public char[][] returnArray()
+    // Transverse the maze using recursion and mark visited cells with an X
+    // character
+    public static boolean traverseMaze(char[][] maze, int row, int column)
     {
-        return mazeTest;
+        if (isValidSpot(maze, row, column))
+        {
+            if (row == maze.length - 1 && column == maze.length - 1)
+            {
+                return true;
+            }
+
+            // marks the current cell as visited
+            maze[row][column] = 'X';
+
+            // up
+            boolean returnValue = traverseMaze(maze, row - 1, column);
+
+            // right
+            if (!returnValue)
+            {
+                returnValue = traverseMaze(maze, row, column + 1);
+
+                // down
+                if (!returnValue)
+                {
+                    returnValue = traverseMaze(maze, row + 1, column);
+                }
+
+                // left
+                if (!returnValue)
+                {
+                    returnValue = traverseMaze(maze, row, column - 1);
+
+                    if (returnValue)
+                    {
+
+                        // if this path leads to the end of the maze, mark the path with dots
+                        System.out.print(row + ", " + column);
+                        maze[row][column] = '.';
+                    }
+                    return returnValue;
+                }
+
+            }
+
+        }
+        return false;
     }
 
+    // prints the final state of the maze with the solution path marked with dots
+    public static void printSolution(char[][] maze)
+    {
+        System.out.println("Solution to maze\n----------------");
+        for (int i = 0; i < maze.length; i++)
+        {
+            for (int j = 0; j < maze[j].length - 1; j++)
+            {
+                System.out.print(maze[i][j] + " ");
+                if (maze[i][j] == '.')
+                {
+                    System.out.print(".");
+                }
+
+            }
+            System.out.println("|");
+
+        }
+        System.out.println("--------------");
+    }
 }
-
-
-
