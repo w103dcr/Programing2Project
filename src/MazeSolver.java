@@ -15,6 +15,11 @@
 //.07---------------------                  *
 // UPDATES THE MAZE VISUALLY AS YOU MOVE    *
 // THROUGH IT. (WALLS ARENT DETECTING YET   *
+//.08---------------------                  *
+// WALL DETECTION ADDED TO CODE             *
+//TODO--------------------------------------*
+//BACKTRACKING DETECTION                    *
+//ADD START AND END LOCATION TO THE MAZE    *
 //*******************************************
 
 package projectmazetest;
@@ -112,6 +117,7 @@ public class MazeSolver
         int newRow = 0;
         int newColumn = 0;
 
+        //while Q is not pressed ask direction
         while (true)
         {
             System.out.println("Enter the direction you wish to go (U)p, (D)own, (L)eft, (R)ight");
@@ -123,38 +129,66 @@ public class MazeSolver
                 break;
 
             }
+            //up if desired location is not a 1 move to location  
             if (input.equalsIgnoreCase("u") && maze[row][column] != 1)
             {
-                System.out.println("Moving to position");
-                maze[row - 1][column] = '*';
-                row--;
-                printArray(maze);
-
-            } else if (input.equalsIgnoreCase("d") && maze[row][column] != 1)
-            {
-                System.out.println("Moving to position");
-
-                maze[row + 1][column] = '*';
-                row++;
-                printArray(maze);
-            } else if (input.equalsIgnoreCase("r") && maze[row][column] != 1)
-            {
-                System.out.println("Moving to position");
-                maze[row][column + 1] = '*';
-                column++;
-                printArray(maze);
+                if (maze[row - 1][column] != 1 && maze[row][column] != '*')
+                {
+                    System.out.println("Moving to position");
+                    maze[row - 1][column] = '*';
+                    row--;
+                    printArray(maze);
+                } else
+                {
+                    System.out.println("Wall Detected!!!! Please choose another direction");
+                }
             }
-
-            else if (input.equalsIgnoreCase("l") && maze[row][column] != 1)
+            
+            //down if desired location is not a 1 move to location  
+            else if (input.equalsIgnoreCase("d"))
             {
-                System.out.println("Moving to position");
-                maze[row][column - 1] = '*';
-                column--;
-                printArray(maze);
+                if (maze[row + 1][column] != 1 )
+                {
+                    System.out.println("Moving to position");
+                    maze[row + 1][column] = '*';
+                    row++;
+                    printArray(maze);
+                } else
+                {
+                    System.out.println("Wall Detected!!!! Please choose another direction");
+                }
+
+                //right if desired location is not a 1 move to location  
+            } else if (input.equalsIgnoreCase("r"))
+            {
+                if (maze[row][column + 1] != 1 )
+                {
+                    System.out.println("Moving to position");
+                    maze[row][column + 1] = '*';
+                    column++;
+                    printArray(maze);
+                } else
+                {
+                    System.out.println("Wall Detected!!!! Please choose another direction");
+                }
+
+              //left if desired location is not a 1 
+            } else if (input.equalsIgnoreCase("l"))
+            {
+                if (maze[row][column - 1] != 1  )
+                {
+                    System.out.println("Moving to position");
+                    maze[row][column - 1] = '*';
+                    column--;
+                    printArray(maze);
+                } else
+                {
+                    System.out.println("Wall Detected!!!! Please choose another direction");
+
+                }
             } else
             {
-                System.out.println("Wall Detected!!!! Please choose another direction");
-
+                System.out.println("invalid input");
             }
         }
 
