@@ -1,6 +1,6 @@
 //Class MazeSolver, C211 Group Project Spring 2023
 //Author: Rhett Godwin
-//************ALPHA BUILD 0.7****************
+//************ALPHA BUILD 0.8****************
 //*     NOT IN 100% WORKING STATE           *
 //      TRANSVERSE METHOD WORKS BUT         *
 //      DOESNT DISPLAY RIGHT                *
