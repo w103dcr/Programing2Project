@@ -1,6 +1,18 @@
 //Class MazeSolver, C211 Group Project Spring 2023
 //Author: Rhett Godwin
-
+//************ALPHA BUILD 0.6****************
+//*     NOT IN 100% WORKING STATE           *
+//      TRANSVERSE METHOD WORKS BUT         *
+//      DOESNT DISPLAY RIGHT                *
+// CHANGELOG:                               *
+// .05-------------------                   *
+// REWORKED CODE TO ALLOW FOR METHODS TO    *
+// TO BE CALLED FROM MAIN WITHOUT PASSING   *
+// ARRAYS                                   *
+//.06--------------------                   *
+// ADDED MANUAL MOVE() METHOD TO TRANSVERSE *
+// THE MAZE MANUALLY (NOT WORKING CORRECTLY)*
+//*******************************************
 
 package projectmazetest;
 
@@ -91,8 +103,6 @@ public class MazeSolver
         System.out.println("--------------");
     }
 
-    //move method to move manually move through the maze
-    //*********work in progress! does not update array yet*****
     public static void move(char[][] maze, int row, int column)
     {
         Scanner scan = new Scanner(System.in);
@@ -139,7 +149,6 @@ public class MazeSolver
         }
        
     }
-    //prints the current array and replaces values with symbols
     public static void printArray(char[][] maze) {
     for (int i = 0; i < maze.length; i++)
     {
