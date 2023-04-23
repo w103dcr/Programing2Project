@@ -1,6 +1,6 @@
 //Class MazeSolver, C211 Group Project Spring 2023
 //Author: Rhett Godwin
-//************ALPHA BUILD 0.6****************
+//************ALPHA BUILD 0.7****************
 //*     NOT IN 100% WORKING STATE           *
 //      TRANSVERSE METHOD WORKS BUT         *
 //      DOESNT DISPLAY RIGHT                *
@@ -12,6 +12,9 @@
 //.06--------------------                   *
 // ADDED MANUAL MOVE() METHOD TO TRANSVERSE *
 // THE MAZE MANUALLY (NOT WORKING CORRECTLY)*
+//.07---------------------                  *
+// UPDATES THE MAZE VISUALLY AS YOU MOVE    *
+// THROUGH IT. (WALLS ARENT DETECTING YET   *
 //*******************************************
 
 package projectmazetest;
@@ -124,51 +127,60 @@ public class MazeSolver
             {
                 System.out.println("Moving to position");
                 maze[row - 1][column] = '*';
+                row--;
                 printArray(maze);
-            
-            }
-            if (input.equalsIgnoreCase("d") && maze[row][column] != 1)
+
+            } else if (input.equalsIgnoreCase("d") && maze[row][column] != 1)
             {
                 System.out.println("Moving to position");
+
                 maze[row + 1][column] = '*';
+                row++;
+                printArray(maze);
+            } else if (input.equalsIgnoreCase("r") && maze[row][column] != 1)
+            {
+                System.out.println("Moving to position");
+                maze[row][column + 1] = '*';
+                column++;
                 printArray(maze);
             }
-                if (input.equalsIgnoreCase("r") && maze[row][column] != 1) {
-                    maze[row][column + 1] = '*';
-                    printArray(maze);
-                }
-                
-                if (input.equalsIgnoreCase("l") && maze[row][column] != 1) {
-                    maze[row][column - 1] = '*';
-                    printArray(maze);
+
+            else if (input.equalsIgnoreCase("l") && maze[row][column] != 1)
+            {
+                System.out.println("Moving to position");
+                maze[row][column - 1] = '*';
+                column--;
+                printArray(maze);
             } else
             {
                 System.out.println("Wall Detected!!!! Please choose another direction");
 
             }
         }
-       
+
     }
-    public static void printArray(char[][] maze) {
-    for (int i = 0; i < maze.length; i++)
+
+    public static void printArray(char[][] maze)
     {
-        for (int j = 0; j < maze[i].length; j++)
+        for (int i = 0; i < maze.length; i++)
         {
-            if (maze[i][j] == 1)
+            for (int j = 0; j < maze[i].length; j++)
             {
-                System.out.print("#");
+                if (maze[i][j] == 1)
+                {
+                    System.out.print("#");
+                }
+                if (maze[i][j] == 0)
+                {
+                    System.out.print(".");
+                }
+                if (maze[i][j] == '*')
+                {
+                    System.out.print("X");
+                }
+                System.out.print(" ");
             }
-            if (maze[i][j] == 0)
-            {
-                System.out.print(".");
-            }
-            if (maze[i][j] == '*')
-            {
-                System.out.print("X");
-            }
-            System.out.print(" ");
+            System.out.println();
         }
-        System.out.println();
-    }
     }
 }
