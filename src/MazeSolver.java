@@ -23,7 +23,7 @@
 // .085
 // WIN CONDITIONS ADDED
 //TODO--------------------------------------*
-//BACKTRACKING DETECTION                    *
+//BACKTRACKING WHERE IT DELETES THE PATH    *
 //                                          *
 //*******************************************
 
