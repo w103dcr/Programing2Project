@@ -1,6 +1,6 @@
 //Class MazeSolver, C211 Group Project Spring 2023
 //Author: Rhett Godwin
-//************ALPHA BUILD 0.7****************
+//************ALPHA BUILD .085****************
 //*     NOT IN 100% WORKING STATE           *
 //      TRANSVERSE METHOD WORKS BUT         *
 //      DOESNT DISPLAY RIGHT                *
@@ -19,10 +19,11 @@
 // WALL DETECTION ADDED TO CODE             *
 //.08.1                                     *
 // REMOVED AUTO SOLVE CODE (KEEP MANUAL CODE*
-// STREAMLINED SOME CODE                    *
+// STREAMLINED SOME CODE   
+// .085
+// WIN CONDITIONS ADDED
 //TODO--------------------------------------*
 //BACKTRACKING DETECTION                    *
-//FIX WIN CONDITION                         *
 //                                          *
 //*******************************************
 
@@ -63,6 +64,10 @@ public class MazeSolver
 
                 if (maze[row - 1][column] != 1)
                 {
+                    if (maze[row][column +1 ] == 2) {
+                    youWin();
+                    break;
+                }
                     System.out.println("Moving to position");
 
                     maze[row - 1][column] = '*';
@@ -80,6 +85,10 @@ public class MazeSolver
             {
                 if (maze[row + 1][column] != 1)
                 {
+                    if (maze[row][column +1 ] == 2) {
+                        youWin();
+                        break;
+                    }
                     System.out.println("Moving to position");
                     maze[row + 1][column] = '*';
                     row++;
@@ -94,13 +103,18 @@ public class MazeSolver
             {
                 if (maze[row][column + 1] != 1)
                 {
+                  if (maze[row][column +1 ] == 2) {
+                      youWin();
+                      break;
+                  }
                     System.out.println("Moving to position");
                     maze[row][column + 1] = '*';
                     column++;
                     printArray(maze);
-                } else if (maze[row][column] == 2)
-                {
-                    System.out.println("Congrats you have reached the end of the maze");
+                 
+                
+                  
+                  
                 } else
                 {
                     wallDetected();
@@ -110,7 +124,11 @@ public class MazeSolver
             } else if (input.equalsIgnoreCase("l") && maze[row][column] != 1)
             {
                 if (maze[row][column - 1] != 1)
-                {
+                { 
+                    if (maze[row][column +1 ] == 2) {
+                        youWin();
+                        break;
+                    }
                     System.out.println("Moving to position");
                     maze[row][column - 1] = '*';
                     column--;
@@ -168,5 +186,16 @@ public class MazeSolver
     public static void wallDetected()
     {
         System.out.println("Wall Detected!!!! Please choose another direction");
+    }
+public static void youWin() {
+    String s ="   ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄   ▄▄    ▄     ▄ ▄▄▄ ▄▄    ▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ \n"
+             +"  █  █ █  █       █  █ █  █  █ █ ▄ █ █   █  █  █ █  █  █  █  █  █  █  █  \n"
+             +"  █  █▄█  █   ▄   █  █ █  █  █ ██ ██ █   █   █▄█ █  █  █  █  █  █  █  █ \n"
+             +"  █       █  █ █  █  █▄█  █  █       █   █       █  █  █  █  █  █  █  █  \n"
+             +"  █▄     ▄█  █▄█  █       █  █       █   █  ▄    █▄▄█▄▄█▄▄█▄▄█▄▄█▄▄█▄▄█  \n"
+             +"    █   █ █       █       █  █   ▄   █   █ █ █   █▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄ ▄▄   \n"
+             +"    █▄▄▄█ █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█  █▄▄█ █▄▄█▄▄▄█▄█  █▄▄█▄▄█▄▄█▄▄█▄▄█▄▄█▄▄█▄▄█  \n";
+    System.out.println(s);
+
     }
 }
