@@ -59,7 +59,7 @@ public class MazeSolver
             }
 
             // up if desired location is not a 1 move to location
-            if (input.equalsIgnoreCase("u") && maze[row][column] != 1 && maze[row][column] != '*')
+            if (input.equalsIgnoreCase("u") && maze[row][column] != 1 )
             {
 
                 if (maze[row - 1][column] != 1)
@@ -101,7 +101,7 @@ public class MazeSolver
                 // right if desired location is not a 1 move to location
             } else if (input.equalsIgnoreCase("r") && maze[row][column] != 1)
             {
-                if (maze[row][column + 1] != 1)
+                if ( maze[row][column + 1] != 1)
                 {
                   if (maze[row][column +1 ] == 2) {
                       youWin();
@@ -138,10 +138,6 @@ public class MazeSolver
                     wallDetected();
 
                 }
-            } else if (maze[row][column] == 2)
-            {
-                System.out.println("Congrats you have reached the end of the maze");
-
             } else
             {
                 System.out.println("invalid input or Backtracking attempted. Choose another direction");
