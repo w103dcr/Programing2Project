@@ -24,7 +24,7 @@
 // WIN CONDITIONS ADDED
 //TODO--------------------------------------*
 //BACKTRACKING DETECTION                    *
-//FIX OUT OF BOUNDS ERRORS                  *
+//                                          *
 //*******************************************
 
 package projectmazetest;
