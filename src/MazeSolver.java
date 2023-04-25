@@ -2,9 +2,7 @@
 //Author: Rhett Godwin
 
 //******RELEASE CANDIDATE 1 BUILD************
-//*     NOT IN 100% WORKING STATE           *
-//      TRANSVERSE METHOD WORKS BUT         *
-//      DOESNT DISPLAY RIGHT                *
+//                                          *
 // CHANGELOG:                               *
 // .05-------------------                   *
 // REWORKED CODE TO ALLOW FOR METHODS TO    *
