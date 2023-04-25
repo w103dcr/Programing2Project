@@ -2,7 +2,9 @@
 //Author: Rhett Godwin
 
 //******RELEASE CANDIDATE 1 BUILD************
-//                                          *
+//*     NOT IN 100% WORKING STATE           *
+//      TRANSVERSE METHOD WORKS BUT         *
+//      DOESNT DISPLAY RIGHT                *
 // CHANGELOG:                               *
 // .05-------------------                   *
 // REWORKED CODE TO ALLOW FOR METHODS TO    *
@@ -67,7 +69,7 @@ public class MazeSolver
                         youWin();
                         break;
                     }
-                    System.out.println("Moving to position");
+                    System.out.println("Moving to position\n------------------");
 
                     // allows for backtracking in the maze
                     if (maze[row][column] == '*')
@@ -98,7 +100,7 @@ public class MazeSolver
                         youWin();
                         break;
                     }
-                    System.out.println("Moving to position");
+                    System.out.println("Moving to position\n------------------");
 
                     // allows for backtracking in the maze
                     if (maze[row][column] == '*')
@@ -129,7 +131,7 @@ public class MazeSolver
                         youWin();
                         break;
                     }
-                    System.out.println("Moving to position");
+                    System.out.println("Moving to position\n------------------");
 
                     // allows for backtracking in the maze
                     if (maze[row][column] == '*')
@@ -161,7 +163,7 @@ public class MazeSolver
                         youWin();
                         break;
                     }
-                    System.out.println("Moving to position");
+                    System.out.println("Moving to position\n------------------");
                     // allows for backtracking in the maze
                     if (maze[row][column] == '*')
                     {
@@ -227,6 +229,7 @@ public class MazeSolver
     public static void wallDetected()
     {
         System.out.println("Wall Detected!!!! Please choose another direction");
+        System.out.println();
     }
 
     // You win method to display you win in ASCII graphics
