@@ -1,6 +1,6 @@
 //Class MazeSolver, C211 Group Project Spring 2023
 //Author: Rhett Godwin
-//************ALPHA BUILD .085****************
+//************BETA BUILD 1.0*****************
 //*     NOT IN 100% WORKING STATE           *
 //      TRANSVERSE METHOD WORKS BUT         *
 //      DOESNT DISPLAY RIGHT                *
@@ -19,11 +19,14 @@
 // WALL DETECTION ADDED TO CODE             *
 //.08.1                                     *
 // REMOVED AUTO SOLVE CODE (KEEP MANUAL CODE*
-// STREAMLINED SOME CODE   
-// .085
-// WIN CONDITIONS ADDED
+// STREAMLINED SOME CODE                    *
+// .085                                     *
+// WIN CONDITIONS ADDED                     *
+// .095                                     *
+// CODE TO ALLOW USER TO MOVE THROUGH THE   *
+// MAZE WITH BACKTRACKING                   *
 //TODO--------------------------------------*
-//BACKTRACKING WHERE IT DELETES THE PATH    *
+//COMMENT CODE AND TESTING                  *
 //                                          *
 //*******************************************
 
@@ -69,7 +72,9 @@ public class MazeSolver
                     break;
                 }
                     System.out.println("Moving to position");
-
+                    if (maze[row][column] == '*') {
+                        maze[row][column] = 0;
+                    }
                     maze[row - 1][column] = '*';
                     row--;
 
@@ -90,6 +95,9 @@ public class MazeSolver
                         break;
                     }
                     System.out.println("Moving to position");
+                    if (maze[row][column] == '*') {
+                        maze[row][column] = 0;
+                    }
                     maze[row + 1][column] = '*';
                     row++;
                     printArray(maze);
@@ -108,6 +116,9 @@ public class MazeSolver
                       break;
                   }
                     System.out.println("Moving to position");
+                    if (maze[row][column] == '*') {
+                        maze[row][column] = 0;
+                    }
                     maze[row][column + 1] = '*';
                     column++;
                     printArray(maze);
@@ -130,24 +141,30 @@ public class MazeSolver
                         break;
                     }
                     System.out.println("Moving to position");
+                    if (maze[row][column] == '*') {
+                        maze[row][column] = 0;
+                    }
                     maze[row][column - 1] = '*';
                     column--;
                     printArray(maze);
                 } else
                 {
                     wallDetected();
-
+                   
                 }
-            } else
-            {
-                System.out.println("invalid input or Backtracking attempted. Choose another direction");
+              if (maze[row][column] == '*') {
+                  maze[row][column] = 0;
+              }
             }
-        }
+            }
 
     }
 
     public static void printArray(char[][] maze)
     {
+       
+        System.out.flush();
+        
         for (int i = 0; i < maze.length; i++)
         {
             for (int j = 0; j < maze[i].length; j++)
@@ -194,4 +211,5 @@ public static void youWin() {
     System.out.println(s);
 
     }
+
 }
