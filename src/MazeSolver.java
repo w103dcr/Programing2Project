@@ -32,6 +32,7 @@
 //FOR GUI                                   *
 //*******************************************
 
+
 package projectmazetest;
 
 import java.util.Scanner;
@@ -159,7 +160,7 @@ public class MazeSolver
                 {
                     // win condition if the number 2 is hit in the array
                     // call the youWin method and closes the program
-                    if (maze[row][column + 1] == 2)
+                    if (maze[row][column - 1] == 2)
                     {
                         youWin();
                         break;
@@ -248,4 +249,3 @@ public class MazeSolver
     }
 
 }
-
