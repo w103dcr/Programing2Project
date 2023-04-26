@@ -1,7 +1,7 @@
 //Class MazeSolver, C211 Group Project Spring 2023
 //Author: Rhett Godwin
 
-//******RELEASE CANDIDATE 1 BUILD************
+//******RELEASE CANDIDATE 2 BUILD************
 //*     NOT IN 100% WORKING STATE           *
 //      TRANSVERSE METHOD WORKS BUT         *
 //      DOESNT DISPLAY RIGHT                *
@@ -26,6 +26,9 @@
 // .095                                     *
 // CODE TO ALLOW USER TO MOVE THROUGH THE   *
 // MAZE WITH BACKTRACKING                   *
+// V2---------------------------------------*
+// FIXED BUGS IN WIN CONDITION AND          *
+// OUT OF BOUNDS ERRORS                     *
 //TODO--------------------------------------*
 //MIGHT HAVE TO CHANGE SOME OUTPUT METHODS  *
 //FOR GUI                                   *
@@ -89,13 +92,13 @@ public class MazeSolver
             }
 
             // down if desired location is not a 1 move to location
-            else if (input.equalsIgnoreCase("d") && row < maze.length && maze[row][column] != 1)
+            else if (input.equalsIgnoreCase("d") && row < maze.length -1  && maze[row][column] != 1)
             {
                 if (maze[row + 1][column] != 1)
                 {
                     // win condition if the number 2 is hit in the array
                     // calls the youWin method and closes the program
-                    if (maze[row][column + 1] == 2)
+                    if (maze[row + 1][column] == 2)
                     {
                         youWin();
                         break;
@@ -120,7 +123,7 @@ public class MazeSolver
                 }
 
                 // right if desired location is not a 1 move to location
-            } else if (input.equalsIgnoreCase("r") && column < maze.length && maze[row][column] != 1)
+            } else if (input.equalsIgnoreCase("r") && column < maze[0].length  && maze[row][column] != 1)
             {
                 if (maze[row][column + 1] != 1)
                 {
@@ -247,3 +250,4 @@ public class MazeSolver
     }
 
 }
+
