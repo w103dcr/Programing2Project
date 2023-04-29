@@ -1,7 +1,7 @@
 //Class MazeSolver, C211 Group Project Spring 2023
 //Author: Rhett Godwin
 
-//******RELEASE CANDIDATE 2 BUILD************
+//**************FINAL BUILD******************
 //*                                         *
 // CHANGELOG:                               *
 // .05-------------------                   *
@@ -27,9 +27,7 @@
 // V2---------------------------------------*
 // FIXED BUGS IN WIN CONDITION AND          *
 // OUT OF BOUNDS ERRORS                     *
-//TODO--------------------------------------*
-//MIGHT HAVE TO CHANGE SOME OUTPUT METHODS  *
-//FOR GUI                                   *
+//                                          *
 //*******************************************
 
 
