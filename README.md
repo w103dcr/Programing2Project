@@ -14,11 +14,17 @@ Rhett is going to be creating the class MazeSolver.
 Rhett created the following classes in support of the gui and solverportion of the program:
 
 MainGUI ---> Main component that starts the GUI
+
 MazeArrays ---> Array class to support the maze solver with mazes in correct format
+
 MazeController ---> Handles all GUI components (buttons, event handling, supported automatic transveral to solve maze within solve button
+
 MazeMainConsole ---> Starts the console portion of the program that allows for manual transveral of the maze based on user input
+
 MazeSolver -----> code that allows for manual transveral of the maze with wall detection and start/win mechanics.
-MazeSolverGUI ----> created as a reference for the automatic solve funtion of the gui portion of the program (code merged into Mazecontroller btnSolve() function. 
+
+MazeSolverGUI ----> created as a reference for the automatic solve function in GUI (code merged into MazeController class) 
+
 MazeXML ----> Handles the layout of the GUI, button, and text area placement
 
 
