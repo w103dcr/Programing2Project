@@ -8,7 +8,7 @@
 //* and win conditions                 *
 //**************************************
 
-package application;
+
 
 
 
