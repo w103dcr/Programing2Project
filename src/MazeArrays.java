@@ -6,7 +6,7 @@
 //for the MazeSolver and MazeSolverGUI   *
 //****************************************
 
-package application;
+
 
 import java.util.*;
 
