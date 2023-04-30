@@ -1,7 +1,32 @@
 # Programming2Project
 # 2D Array Maze
 
-Using a 2D array to create a maze for the user in the console. The user can then navigate the maze to find a target.
+
+Project Scope:
+Using a 2D array to create a maze for the user in the console. The user can then navigate the maze to find a target
+and create a GUI compontent to the program. 
+
+Program Instructions:
+Console version: Naivgate the 2d maze trying to reach the end of the maze (E) using the 
+(U)p, (D)own, (L)eft, (R)ight keys moving through the maze forwards or backwards
+if you reach a dead end. Try to reach the end of the maze for a special message. 
+
+GUI version: Press the Generate maze to generate a random 2d maze array and 
+then press the Solve Maze button to have the computer solve it. Don't worry if no
+path is found the computer will tell you.
+
+*Known Issues*
+---------------
+TextArea will NOT refresh until a loop is completed. This is the reason in the GUI portion of 
+the program the computer is used to solve the maze instead of user transveral. 
+Possible soulution to problem is taking a multithread approach and run the while loop in a 
+seperate thread to allow for updates while the loop is in progress. However, this is beyond the 
+scope of this class. 
+
+*Side note --- > Multithreading was attempted but after several hours could not get it to work. 
+
+
+
 
 Group Members: <br />
 Riley Combs <br /> 
