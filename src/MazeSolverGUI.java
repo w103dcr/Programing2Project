@@ -17,20 +17,20 @@ import javax.swing.JOptionPane;
 
 public class MazeSolverGUI
 {
-    
+
     public void move(char[][] maze, int row, int column)
     {
 
-// use a stack to keep track of the path
+        // use a stack to keep track of the path
         Stack<int[]> path = new Stack<>();
         path.push(new int[]
         { row, column });
 
-//code for automatic transition of maze 
-//**Could not get manual transition to update** 
-//**textarea while in a while loop**
-//**Switched to automatic transversal to solve**
-      
+        //code for automatic transition of maze 
+        //**Could not get manual transition to update** 
+        //**textarea while in a while loop**
+        //**Switched to automatic transversal to solve**
+
         while (!path.isEmpty())
         {
             // get the current position
@@ -79,15 +79,15 @@ public class MazeSolverGUI
 
             // print the maze after solving and display solved message
             txtOutput.appendText(getArrayString(maze));
-           
+
         }
 
-// if we get here, there is no path to the goal
+        // if we get here, there is no path to the goal
         JOptionPane.showMessageDialog(null, "No path to goal found.");
     }
 
-//to string method for displaying the output in a toString
-//for GUI display
+    //to string method for displaying the output in a toString
+    //for GUI display
     public static String getArrayString(char[][] maze)
     {
         StringBuilder sb = new StringBuilder();
@@ -118,5 +118,4 @@ public class MazeSolverGUI
         return sb.toString();
     }
 
-    
 }
