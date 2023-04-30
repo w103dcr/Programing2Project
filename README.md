@@ -37,7 +37,7 @@ Dwayne is going to be creating the class Maze. Created a stub for the class and 
 
 
 Rhett is going to be creating the class MazeSolver. 
-Rhett created the following classes in support of the gui and solverportion of the program:
+Rhett created the following classes in support of the gui and solver portion of the program:
 
 MainGUI ---> Main component that starts the GUI
 
