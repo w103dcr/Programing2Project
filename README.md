@@ -19,6 +19,8 @@ MazeController ---> Handles all GUI components (buttons, event handling, support
 MazeMainConsole ---> Starts the console portion of the program that allows for manual transveral of the maze based on user input
 MazeSolver -----> code that allows for manual transveral of the maze with wall detection and start/win mechanics.
 MazeSolverGUI ----> created as a reference for the automatic solve funtion of the gui portion of the program (code merged into Mazecontroller btnSolve() function. 
+MazeXML ----> Handles the layout of the GUI, button, and text area placement
+
 
 Riley is going to be creating the class MazeMain. Created a stub for the class and added a constructor and scanner.
 
