@@ -8,13 +8,13 @@ and create a GUI compontent to the program.
 
 Program Instructions:
 Console version (MazeConsole.jar):</br>
-To run: Go to the command line and type in java -jar MazeConsole.jar
+To run: Go to the command line and type in java -jar MazeConsole.jar</br>
 Naivgate the 2d maze trying to reach the end of the maze (E) using the 
 (U)p, (D)own, (L)eft, (R)ight keys moving through the maze forwards or backwards
 if you reach a dead end. Try to reach the end of the maze for a special message. 
 
 GUI version (MazeGUI.jar):</br>
-To run: Click on the Icon
+To run: Click on the Icon</br>
 Press the Generate maze to generate a random 2d maze array and 
 then press the Solve Maze button to have the computer solve it. Don't worry if no
 path is found the computer will tell you.
