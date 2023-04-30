@@ -11,7 +11,7 @@ Rhett Godwin
 Dwayne is going to be creating the class Maze. Created a stub for the class and added constructors, getters, and setters.
 
 Rhett is going to be creating the class MazeSolver. 
-Rhett created the following classes in support of the gui and solverportion of the program
+Rhett created the following classes in support of the gui and solverportion of the program:
 
 MainGUI ---> Main component that starts the GUI
 MazeArrays ---> Array class to support the maze solver with mazes in correct format
