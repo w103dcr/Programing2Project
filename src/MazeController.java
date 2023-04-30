@@ -5,6 +5,7 @@
 //Provides buttons and events for GUI  *
 //**************************************
 
+package application;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -29,36 +30,32 @@ import java.io.OutputStream;
 
 public class MazeController
 {
-    
-    //object create object maze
+
+    // object create object maze
     MazeArrays maze = new MazeArrays();
 
-   
     int arrNum;
     int ranNum;
-   
 
     @FXML
-    //create textArea txtOutput
+    // create textArea txtOutput
     TextArea txtOutput;
-
-  
 
     public MazeController() {
 
     }
 
     @FXML
-    //Button Generate for gui. That calls return array function in
-    //array with a random number. and calls that array
+    // Button Generate for gui. That calls return array function in
+    // array with a random number. and calls that array
     public void btnGen(ActionEvent e) throws InterruptedException
-    {   
-        
+    {
+
         ranNum = maze.randomGen();
         arrNum = ranNum;
         char test[][] = maze.returnArray(arrNum);
         String mazeString = getArrayString(test);
-  
+
         txtOutput.clear();
         System.out.print(mazeString);
         txtOutput.appendText(mazeString);
@@ -66,7 +63,7 @@ public class MazeController
     }
 
     @FXML
-    //button solve for gui
+    // button solve for gui
     public void btnSolve(ActionEvent e)
     {
 
@@ -78,28 +75,26 @@ public class MazeController
 
     @FXML
 
-    //Exit buttons
+    // Exit buttons
     public void Exit(ActionEvent e)
     {
         System.exit(0);
     }
 
-   
-
-// Starting Maze Solver functions
+    // Starting Maze Solver functions
 
     public void move(char[][] maze, int row, int column)
     {
 
-// use a stack to keep track of the path
+        // use a stack to keep track of the path
         Stack<int[]> path = new Stack<>();
         path.push(new int[]
         { row, column });
 
-//code for automatic transition of maze 
-//**Could not get manual transition to update** 
-//**textarea while in a while loop**
-//**Switched to automatic transversal to solve**
+        //code for automatic transition of maze 
+        //**Could not get manual transition to update** 
+        //**textarea while in a while loop**
+        //**Switched to automatic transversal to solve**
         while (!path.isEmpty())
         {
             // get the current position
@@ -148,15 +143,15 @@ public class MazeController
 
             // print the maze after solving and display solved message
             txtOutput.appendText(getArrayString(maze));
-         
+
         }
 
-// if we get here, there is no path to the goal
+        // if we get here, there is no path to the goal
         JOptionPane.showMessageDialog(null, "No path to goal found.");
     }
 
-//to string method for displaying the output in a toString
-//for GUI display
+    //to string method for displaying the output in a toString
+    //for GUI display
     public static String getArrayString(char[][] maze)
     {
         StringBuilder sb = new StringBuilder();
