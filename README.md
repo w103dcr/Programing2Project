@@ -27,8 +27,8 @@ scope of this class.
 
 
 
-
-Group Members: <br />
+Members
+------------------
 Riley Combs <br /> 
 Dwayne Roark <br />
 Rhett Godwin
