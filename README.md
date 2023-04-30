@@ -10,6 +10,7 @@ Rhett Godwin
 
 Dwayne is going to be creating the class Maze. Created a stub for the class and added constructors, getters, and setters.
 
+
 Rhett is going to be creating the class MazeSolver. 
 Rhett created the following classes in support of the gui and solverportion of the program:
 
@@ -26,6 +27,7 @@ MazeSolver -----> code that allows for manual transveral of the maze with wall d
 MazeSolverGUI ----> created as a reference for the automatic solve function in GUI (code merged into MazeController class) 
 
 MazeXML ----> Handles the layout of the GUI, button, and text area placement
+
 
 
 Riley is going to be creating the class MazeMain. Created a stub for the class and added a constructor and scanner.
