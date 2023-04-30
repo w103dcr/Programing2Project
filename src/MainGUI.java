@@ -1,4 +1,4 @@
-package application;
+
 	
 //Class MainGUI, C211 Group Project Spring 2023
 //Author: Rhett Godwin
