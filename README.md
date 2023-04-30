@@ -7,7 +7,7 @@ Using a 2D array to create a maze for the user in the console. The user can then
 and create a GUI compontent to the program. 
 
 Program Instructions:
-Console version (MazeConsole.jar):
+Console version (MazeConsole.jar):</br>
 Naivgate the 2d maze trying to reach the end of the maze (E) using the 
 (U)p, (D)own, (L)eft, (R)ight keys moving through the maze forwards or backwards
 if you reach a dead end. Try to reach the end of the maze for a special message. 
