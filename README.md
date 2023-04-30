@@ -18,7 +18,7 @@ MazeArrays ---> Array class to support the maze solver with mazes in correct for
 MazeController ---> Handles all GUI components (buttons, event handling, supported automatic transveral to solve maze within solve button
 MazeMainConsole ---> Starts the console portion of the program that allows for manual transveral of the maze based on user input
 MazeSolver -----> code that allows for manual transveral of the maze with wall detection and start/win mechanics.
-MazeSolverGUI ----> created as a reference for the automatic solve funtion of the gui portion of the program (code merged into Mazecontroller btlSolve() function. 
+MazeSolverGUI ----> created as a reference for the automatic solve funtion of the gui portion of the program (code merged into Mazecontroller btnSolve() function. 
 
 Riley is going to be creating the class MazeMain. Created a stub for the class and added a constructor and scanner.
 
