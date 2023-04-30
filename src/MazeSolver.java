@@ -31,7 +31,7 @@
 //*******************************************
 
 
-package projectmazetest;
+
 
 import java.util.Scanner;
 
